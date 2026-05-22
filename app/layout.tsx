@@ -3,6 +3,7 @@ import { IBM_Plex_Mono, IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SiteNav } from "@/components/site-nav";
 import { absoluteUrl, site } from "@/lib/site";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const sans = IBM_Plex_Sans({
@@ -98,6 +99,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
