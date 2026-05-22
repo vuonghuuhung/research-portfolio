@@ -13,7 +13,6 @@ export const metadata: Metadata = pageMetadata({
 
 export default async function HomePage() {
   const about = await getMarkdownFile("content/about.md");
-  console.log(about.data.photo);
 
   return (
     <main className="document">
