@@ -16,7 +16,7 @@ I graduated from Hanoi University of Science and Technology, Vietnam, with a B.S
 
 My path into blockchain began nearly four years ago, while I was still a student in a university laboratory. I started by learning the foundations of Bitcoin and Ethereum, then moved into building decentralized applications. Since then, I have worked on different Web3 systems, including tokenized real-world assets, DeFi vaults, AMM and CLAMM designs, cross-chain interoperability, Telegram Mini App trading experiences, and AI-agent tooling for Web3 products. Those experiences gave me strong programming skills in Web3 and made me love coding even more.
 
-After years of building applications on top of blockchains, I realized that application development alone was not enough to truly master the field. I still lacked a deep understanding of the foundations underneath blockchain networks, including consensus algorithms, peer-to-peer networking, distributed storage, and data availability. That realization led me to leave my current jobs and dive more deeply into research, with the intention of staying locked into these topics for the long term.
+After years of building applications on top of blockchains, I realized that application development alone was not enough to truly master the field. I still lacked a deep understanding of the foundations underneath blockchain networks, including consensus algorithms, peer-to-peer networking, distributed storage, and data availability. That realization led me to reduce my effort on building and dive more deeply into research, with the intention of staying locked into these topics for the long term.
 
 ## My First Research Paper
 
