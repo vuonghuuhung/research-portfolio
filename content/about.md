@@ -1,43 +1,38 @@
 ---
-name: "Dang Pham Minh"
+name: "Hung (Hans) Vuong Huu"
 photo: "assets/images/profile.jpeg"
-email: "phamminhdang135@gmail.com"
-github: "https://github.com/perfogic"
-github_label: "github.com/perfogic"
-linkedin: "https://www.linkedin.com/in/perfogice"
-linkedin_label: "linkedin.com/in/perfogic"
+email: "hans.vuong182@gmail.com"
+github: "https://github.com/vuonghuuhung"
+github_label: "github.com/vuonghuuhung"
+linkedin: "https://www.linkedin.com/in/hansvuong182"
+linkedin_label: "linkedin.com/in/hansvuong182"
 cv: "#"
 cv_label: "CV"
 ---
 
 ## Brief Description
 
-I graduated two years ago with an Excellent Engineer degree in Computer Science from Hanoi University of Science and Technology, Vietnam.
+I graduated from Hanoi University of Science and Technology, Vietnam, with a B.S. in Computer Science. I completed the program with Highest Honor.
 
-My path into blockchain began earlier, around four years ago while I was still a student. Since then, I have worked on different kinds of decentralized applications, including NFT marketplaces, DeFi systems such as AMM V3 design, and cross-chain bridge systems for Cosmos-to-TON and Bitcoin-to-Cosmos interoperability following IBC protocol (Light Client and State verification).
+My path into blockchain began nearly four years ago, while I was still a student in a university laboratory. I started by learning the foundations of Bitcoin and Ethereum, then moved into building decentralized applications. Since then, I have worked on different Web3 systems, including tokenized real-world assets, DeFi vaults, AMM and CLAMM designs, cross-chain interoperability, Telegram Mini App trading experiences, and AI-agent tooling for Web3 products. Those experiences gave me strong programming skills in Web3 and made me love coding even more.
 
-That bridge work was especially important for me because it required understanding how to build light clients, how validator signatures can be used to prove that a block is valid, and how consensus assumptions shape what can actually be verified across chains.
-
-Studying Cosmos consensus more closely made me realize that I wanted to pursue research seriously, with the hope that I could contribute more directly to the foundations of blockchain systems.
+After years of building applications on top of blockchains, I realized that application development alone was not enough to truly master the field. I still lacked a deep understanding of the foundations underneath blockchain networks, including consensus algorithms, peer-to-peer networking, distributed storage, and data availability. That realization led me to leave my current jobs and dive more deeply into research, with the intention of staying locked into these topics for the long term.
 
 ## My First Research Paper
 
-In 2025, I had the opportunity to work with Professor. [David Tran](https://scholar.google.com/citations?user=Wi02UQoAAAAJ&hl=en).
-Through that collaboration, I was able to study distributed networks more deeply through the lens of Data Availability Sampling.
-One outcome of that work was my first paper, **Efficient Data Availability Sampling via Coded Distributed Arrays**, coauthored with Hung Vuong Huu and Duc A. Tran, which was accepted to ICBC 2026.
+In 2025, I had the opportunity to work with Professor [David Tran](https://scholar.google.com/citations?user=Wi02UQoAAAAJ&hl=en).
+Through that collaboration, I began studying distributed networks through the lens of Data Availability Sampling.
+The result was my first research paper, **Efficient Data Availability Sampling via Coded Distributed Arrays**, coauthored with Dang Pham Minh and Duc A. Tran, which was accepted to ICBC 2026.
 
-Because this portfolio represents the beginning of a longer path, and because I hope it can help open a PhD direction, I have structured it around reading narratives rather than only outputs.
-The site documents what I explored in the DAS roadmap and, more recently, what I have been studying in BFT consensus and Ethereum finality.
+That paper marked my transition from only building blockchain applications to studying the mechanisms that make blockchain systems scalable and reliable. This portfolio records that transition through reading narratives, research notes, and the topics I am currently learning in data availability, BFT consensus, Ethereum finality, and related distributed systems.
 
 ## Research interests
 
+- Distributed Storage
+- Data Availability Sampling
 - Consensus Algorithms
-- Data availability sampling
-- Distributed systems
-- Scaling Layer 2 protocols and beyond
+- DeFi Protocols
 
 ## Research attitude
 
-A sentence I often remind myself of is: **"You're always in somebody's school."**
-
-I take this as a reminder to stay humble while learning. I enjoy studying new ideas, but I try to prioritize real understanding over impressive terminology. My goal is to read carefully, ask precise questions, and keep learning from people who understand the field more deeply.
+I love coding and creating useful systems for people around the world. To do that well, I believe research is the best way to unlock new ideas and understand why systems work at their roots. I did not start my path as a researcher, but over time I found research to be the most meaningful way for me to grow. Because of that, I try to stay humble, keep asking for root causes, and continue learning from people who understand the field more deeply.

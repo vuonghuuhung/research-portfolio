@@ -1,2 +1,10 @@
 .venv
 reaper-workspace/*
+
+.DS_Store
+node_modules/
+.next/
+out/
+dist/
+.env*.local
+*.tsbuildinfo

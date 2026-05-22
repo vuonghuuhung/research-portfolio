@@ -1,8 +1,8 @@
-- Email: [phamminhdang135@gmail.com](mailto:phamminhdang135@gmail.com)
-- GitHub: [github.com/perfogic](https://github.com/perfogic)
-- LinkedIn: [linkedin.com/in/perfogic](https://www.linkedin.com/in/perfogic)
-- Telegram: [Link](https://t.me/perfogic)
+- Email: [hans.vuong182@gmail.com](mailto:hans.vuong182@gmail.com)
+- GitHub: [github.com/vuonghuuhung](https://github.com/vuonghuuhung)
+- LinkedIn: [linkedin.com/in/hansvuong182](https://www.linkedin.com/in/hansvuong182)
+- Telegram: [t.me/hansvuonghuu](https://t.me/hansvuonghuu)
 - CV: [Link](#)
 
-I want this site to function as a research dossier.
-If you are interested in discussing any of the reading paths or open questions here, email or linkedin is the best contact path.
+I use this site as a research dossier for the questions, reading paths, and technical notes I am working through.
+If you would like to discuss any of them, email or LinkedIn is the best way to reach me.

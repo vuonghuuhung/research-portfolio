@@ -4,6 +4,33 @@ This repository is both a personal research portfolio and a public learning spac
 
 The goal is to turn paper reading into material that is useful for younger developers, researchers, and engineers who want to understand blockchain in protocol terms (currently are **DAS** and **Consensus**).
 
+## Development
+
+This site is a Next.js App Router project.
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+Useful commands:
+
+```bash
+pnpm lint
+pnpm build
+pnpm start
+```
+
+For production SEO metadata, set `NEXT_PUBLIC_SITE_URL` to the final deployed URL, for example:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+Vercel Web Analytics is already installed through `@vercel/analytics` and mounted in the root layout.
+
 ## Content Use
 
 Please do not mirror, or republish the content wholesale without permission.
