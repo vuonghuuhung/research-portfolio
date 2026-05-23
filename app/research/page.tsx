@@ -5,7 +5,7 @@ import {
   markdownTitle,
   type MarkdownEntry,
 } from "@/lib/content";
-import { pageMetadata } from "@/lib/site";
+import { pageMetadata, site } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "Research Narrative",
@@ -32,8 +32,10 @@ function DetailsBlock({
 }
 
 function SectionDetails({ entry }: { entry: MarkdownEntry }) {
+  const title = markdownTitle(entry);
   return (
-    <DetailsBlock title={markdownTitle(entry)}>
+    <DetailsBlock title={title}>
+      <h3 className="sr-only">{title}</h3>
       {entry.data.subtitle ? (
         <p className="details-subtitle">{entry.data.subtitle}</p>
       ) : null}
@@ -50,9 +52,11 @@ async function ReadingLog({
   open?: boolean;
 }) {
   const log = await getReadingLog(folder);
+  const title = markdownTitle(log.indexEntry);
 
   return (
-    <DetailsBlock open={open} title={markdownTitle(log.indexEntry)}>
+    <DetailsBlock open={open} title={title}>
+      <h2 className="sr-only">{title}</h2>
       {log.indexEntry.data.subtitle ? (
         <p className="log-subtitle">{log.indexEntry.data.subtitle}</p>
       ) : null}
@@ -67,11 +71,40 @@ async function ReadingLog({
 }
 
 export default function ResearchPage() {
+  const researchPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    headline: "Research Narrative",
+    description:
+      "Reading logs and research narrative on data availability sampling, BFT consensus, Ethereum finality, and related protocols.",
+    author: {
+      "@type": "Person",
+      name: site.name,
+      url: site.url,
+    },
+    keywords:
+      "data availability sampling, DAS, Byzantine fault tolerance, consensus protocols, Ethereum, distributed systems",
+    about: [
+      {
+        "@type": "Thing",
+        name: "Data Availability Sampling",
+      },
+      {
+        "@type": "Thing",
+        name: "Byzantine Fault Tolerance",
+      },
+      {
+        "@type": "Thing",
+        name: "Consensus Protocols",
+      },
+    ],
+  };
+
   return (
     <main className="document">
       <section className="document-section">
         <div className="section-heading">
-          <h2>Research Narrative</h2>
+          <h1>Research Narrative</h1>
         </div>
         <div className="research-intro">
           <p>
@@ -85,6 +118,12 @@ export default function ResearchPage() {
           <ReadingLog folder="content/research/das-reading-log" open />
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(researchPageJsonLd),
+        }}
+      />
     </main>
   );
 }
