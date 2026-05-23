@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const site = {
-  name: "Hans",
-  title: "Hans",
+  name: "Hans Vuong",
+  title: "Hans Vuong — Research Portfolio",
   description:
     "Research portfolio covering data availability sampling, Byzantine fault tolerance, consensus protocols, publications, and technical writing.",
   url:
