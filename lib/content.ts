@@ -143,6 +143,33 @@ function normalizeMarkdownLinks(markdown: string) {
     );
 }
 
+function addMissingHtmlAttribute(
+  html: string,
+  tagName: string,
+  attribute: string,
+  value: string
+) {
+  return html.replace(
+    new RegExp(`<${tagName}\\b(?![^>]*\\b${attribute}=)([^>]*)>`, "gi"),
+    `<${tagName} ${attribute}="${value}"$1>`
+  );
+}
+
+function optimizeEmbeddedMedia(html: string) {
+  const htmlWithLazyImages = addMissingHtmlAttribute(
+    addMissingHtmlAttribute(html, "img", "loading", "lazy"),
+    "img",
+    "decoding",
+    "async"
+  );
+
+  return htmlWithLazyImages.replace(
+    /<embed\b[^>]*\bsrc=["']([^"']+\.pdf)["'][^>]*>/gi,
+    (_embed, src: string) =>
+      `<p><a href="${src}" rel="noopener noreferrer" target="_blank">Open PDF visualization</a></p>`
+  );
+}
+
 async function readMarkdownFile(relativePath: string): Promise<MarkdownEntry> {
   const contentPath = contentRelativePath(relativePath);
   const filePath = path.join(contentRoot, contentPath);
@@ -204,10 +231,12 @@ export async function getReadingLog(folder: string) {
 
 export async function markdownToHtml(markdown: string) {
   const normalized = normalizeMarkdownLinks(markdown);
-  return marked.parse(normalized, {
+  const html = marked.parse(normalized, {
     async: false,
     gfm: true,
   }) as string;
+
+  return optimizeEmbeddedMedia(html);
 }
 
 export async function getAllContentEntries() {
