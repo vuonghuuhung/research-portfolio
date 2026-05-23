@@ -45,7 +45,7 @@ contract Inbox {
 Here `batchData` argument is in `CALLDATA`.
 At the EVM level, the transaction is calling `postBatch(...)` and those bytes are part of the call input.
 
-<img src="/assets/images/das/00.png" alt="00" width="640" />
+<img src="/assets/images/das/00.webp" alt="00" width="640" />
 
 ### The problem with `CALLDATA`
 
@@ -84,7 +84,7 @@ The important difference is that blobs are temporary.
 They are kept for a bounded window, not forever.
 In `EIP-4844`, the minimum retention window for blob sidecars is `4096` epochs, which is roughly 18 days.
 
-<img src="/assets/images/das/01.png" alt="01" width="640" />
+<img src="/assets/images/das/01.webp" alt="01" width="640" />
 
 After `Proto-Danksharding`, Ethereum no longer treats rollup data and ordinary execution data as the same thing.
 
@@ -98,7 +98,7 @@ Blobs are different.
 They are stored outside this beacon block as temporary data.
 Inside the beacon block, there is a field called `blob_kzg_commitments`, which is used to check that a given blob really belongs to that block.
 
-<img src="/assets/images/das/02.png" alt="02" width="640" />
+<img src="/assets/images/das/02.webp" alt="02" width="640" />
 
 `Proto-Danksharding` does solve the first bottleneck:
 

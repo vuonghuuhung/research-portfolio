@@ -28,7 +28,7 @@ The exact assignment rules are more detailed than I want to go into here, but th
 Sampling is then done through **DHT retrieval**.
 A node that wants to sample does not download the whole block. Instead, it tries to find the peer responsible for the column it wants and retrieves that sampled data from the network.
 
-<img src="/assets/images/das/03.png" alt="PeerDAS 1D sampling" width="720" />
+<img src="/assets/images/das/03.webp" alt="PeerDAS 1D sampling" width="720" />
 
 This is already a meaningful step away from full download, but the bottleneck now moves to the network layer.
 
@@ -55,14 +55,14 @@ The idea there is still in the 1D-sampling family, but the sampling path is move
 
 However, the main issue with `SubnetDAS` is not sampling itself, but reconstruction. Its convergence property depends on many subnets remaining reliable under adversarial conditions, and a disruption in even one critical subnet may be enough to stall full reconstruction.
 
-<img src="/assets/images/das/13.png" alt="FullDAS 2D sampling" width="720" />
+<img src="/assets/images/das/13.webp" alt="FullDAS 2D sampling" width="720" />
 
 ## FullDAS
 
 Another direction is **FullDAS**, which moves into the `2D` sampling setting.
 Here the sampling unit is no longer a full column, but an individual cell inside a two-dimensional coded matrix.
 
-<img src="/assets/images/das/12.png" alt="FullDAS 2D sampling" width="720" />
+<img src="/assets/images/das/12.webp" alt="FullDAS 2D sampling" width="720" />
 
 Compared with 1D PeerDAS, this gives a much cleaner recovery structure.
 But it also makes the network-layer problem harder, because now the system must support sampling and retrieval at finer granularity.
@@ -77,7 +77,7 @@ There are already proposals to optimize sampling by improving parts of the `DHT`
 
 `PANDAS` is another direction for making DAS practical within Ethereum's consensus time bounds. Before going to a bit detail, block time in Ethereum is `12s`, with `4s` for block probagation:
 
-<img src="/assets/images/das/14.png" alt="slot phases" width="720" />
+<img src="/assets/images/das/14.webp" alt="slot phases" width="720" />
 
 The main idea is to push the first dissemination step onto the **block builder**.
 Instead of relying mainly on multi-hop propagation from the start, the builder directly seeds the coded data to the nodes that are supposed to custody it.
@@ -94,7 +94,7 @@ So the flow is roughly:
 4. nodes also perform DAS sampling in parallel;
 5. if this finishes within roughly `4s`, validators can safely attest to the block.
 
-![alt text](/assets/images/das/15.png)
+![alt text](/assets/images/das/15.webp)
 
 This is the main appeal of `PANDAS`. It is designed around Ethereum's actual production constraint: DAS is not useful if dissemination and sampling cannot finish within the attestation deadline.
 
@@ -155,4 +155,4 @@ All nodes in the same column store the same assigned data, so storage and commun
 So compared with PeerDAS-style designs, `RDA` spends more on replication in exchange for a simpler retrieval path and a much stronger formal guarantee.
 
 For visualization, you can check this slide:
-<embed src="/assets/files/rda_slide.pdf" width="100%" height="600px" type="application/pdf">
+[Open PDF visualization](/assets/files/rda_slide.pdf)

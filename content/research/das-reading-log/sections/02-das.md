@@ -6,13 +6,13 @@ Before talking about specific protocols, it helps to start from the most naive i
 
 Suppose we simply split a block into many pieces and distribute those pieces across the network.
 At first glance, that sounds enough: each node only stores a small part, so the storage burden is reduced.
-![alt text](/assets/images/das/05.png)
+![alt text](/assets/images/das/05.webp)
 
 However, **The problem appears immediately once even a single part goes missing**.
 It is easy to imagine a small cluster of Byzantine nodes deliberately refusing to store or serve one part of the block.
 At this case, we can't reconstruct back to our original block from parts.
 So plain splitting is not enough.
-![alt text](/assets/images/das/06.png)
+![alt text](/assets/images/das/06.webp)
 
 We need a way to distribute the data such that even if some pieces are missing, the original block can still be recovered.
 
@@ -47,7 +47,7 @@ We are asking:
 
 That is the door that opens the way to sampling.
 
-![alt text](/assets/images/das/07.png)
+![alt text](/assets/images/das/07.webp)
 
 ## 1D sampling
 
@@ -61,7 +61,7 @@ In the 1D setting, the data is erasure-coded in only one direction, usually pict
 
 Suppose the original data is encoded from `k` parts into `2k` coded parts. Since the block can still be reconstructed from any `k` available coded parts, an adversary must withhold more than half of the coded data to make the block unrecoverable.
 
-![alt text](/assets/images/das/08.png)
+![alt text](/assets/images/das/08.webp)
 
 If a validator makes `n` independent random sampling requests by columns, then the probability that all of them still miss the unavailable region is at most:
 
@@ -93,7 +93,7 @@ Instead, it has to fall back to reconstructing the whole encoded block.
 That is expensive, both in bandwidth and in computation.
 So 1D sampling is a useful first step for DAS, but it is not yet a good long-term structure for distributed recovery.
 
-<img src="/assets/images/das/09.png" alt="03" width="720" />
+<img src="/assets/images/das/09.webp" alt="03" width="720" />
 
 ## 2D sampling: from columns to cells
 
@@ -108,7 +108,7 @@ Instead of encoding the data in only one direction, we encode it in two:
 
 So the encoded block becomes a matrix rather than a single long strip.
 
-<img src="/assets/images/das/10.png" alt="04" width="720" />
+<img src="/assets/images/das/10.webp" alt="04" width="720" />
 
 This changes the recovery structure in an important way.
 
@@ -117,7 +117,7 @@ A missing cell can now be recovered from:
 - recover through the row,
 - or recover through the column.
 
-<img src="/assets/images/das/11.png" alt="04" width="720" />
+<img src="/assets/images/das/11.webp" alt="04" width="720" />
 
 So if one recovery direction becomes weak, the other may still be enough.
 That is the real advantage of 2D coding: it gives the system two repair paths instead of one.
@@ -125,7 +125,7 @@ That is the real advantage of 2D coding: it gives the system two repair paths in
 So compared with 1D sampling, 2D sampling gives a much more **local recovery structure**.
 The system no longer has to treat every small loss as a whole-block reconstruction problem.
 
-<img src="/assets/images/das/04.png" alt="04" width="720" />
+<img src="/assets/images/das/04.webp" alt="04" width="720" />
 
 However, 2D coding does not make the whole problem easy.
 It mainly fixes the recovery structure.
